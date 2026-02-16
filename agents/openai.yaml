@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logo Search Skill"
+  short_description: "Find and vet brand logos quickly"
+  default_prompt: "Use $logo-search-skill to find official SVG logos for OpenAI and Anthropic suitable for a web settings page."
