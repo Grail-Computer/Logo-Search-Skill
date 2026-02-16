@@ -34,6 +34,20 @@ Use this skill when a user asks for company/product logos, especially for UI imp
 - Recommend default + fallback option.
 - Include integration notes (size, color mode, accessibility label).
 
+## CLI Quick Start
+
+Use this script for fast, repeatable lookups:
+
+```bash
+python3 scripts/logo_search.py OpenAI Anthropic
+```
+
+With SVG metadata validation on the recommended asset:
+
+```bash
+python3 scripts/logo_search.py OpenAI Anthropic --validate
+```
+
 ## Output Template
 Use this structure in responses:
 
@@ -51,4 +65,5 @@ Use this structure in responses:
 
 ## Resources
 - Read `references/sources.md` for source-specific selection and licensing checks.
+- Use `scripts/logo_search.py` to discover ranked logo candidates from trusted sources.
 - Use `scripts/check_svg.py` to inspect SVG metadata quickly before recommending an asset.
