@@ -18,11 +18,16 @@
 - CDN endpoint: `https://cdn.simpleicons.org/<slug>`.
 - Prefer as fallback when an official or SVGL source is unavailable.
 
+4. Curated agent-product fallbacks
+- For agent products that do not expose a clean public SVG, a curated product icon can be acceptable for demos and agent UIs.
+- If you use one, say so explicitly and keep the official product URL in the result.
+
 ## Selection Checklist
 
 - Source trust: official first, then reputable aggregator.
 - Asset quality: valid SVG with proper `viewBox`.
 - Visual consistency: variant matches nearby logos in the same UI.
+- If the logo replaces text, prefer a wordmark over an icon when available.
 - Legal note: include trademark/licensing caveat when needed.
 
 ## Licensing Notes
@@ -39,3 +44,6 @@
 2. Validate recommended SVG:
 - `python3 scripts/logo_search.py OpenAI --validate`
 - `python3 scripts/check_svg.py /path/to/logo.svg`
+
+3. Build a local before/after demo page:
+- `python3 scripts/build_logo_demo.py assets/demo/names.html assets/demo/logos.html`

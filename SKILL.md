@@ -6,7 +6,7 @@ description: Find official, high-quality brand logos/icons (SVG/PNG) quickly wit
 # Logo Search Skill
 
 ## Overview
-Use this skill when a user asks for company/product logos, especially for UI implementation. The goal is to return usable assets fast (prefer SVG), with trustworthy sources and licensing notes.
+Use this skill when a user asks for company/product logos, especially for UI implementation or replacing text labels with logos in a static page. The goal is to return usable assets fast (prefer SVG), with trustworthy sources and licensing notes.
 
 ## Workflow
 
@@ -34,6 +34,11 @@ Use this skill when a user asks for company/product logos, especially for UI imp
 - Recommend default + fallback option.
 - Include integration notes (size, color mode, accessibility label).
 
+5. For bulk or demo-page replacement
+- Prefer wordmarks when a logo is replacing visible text.
+- Download the chosen assets locally before publishing a static page.
+- Use `scripts/build_logo_demo.py` when the user wants a fast before/after demo page from simple placeholders.
+
 ## CLI Quick Start
 
 Use this script for fast, repeatable lookups:
@@ -46,6 +51,18 @@ With SVG metadata validation on the recommended asset:
 
 ```bash
 python3 scripts/logo_search.py OpenAI Anthropic --validate
+```
+
+Prefer wordmarks when replacing text labels:
+
+```bash
+python3 scripts/logo_search.py OpenAI Anthropic Cursor --prefer wordmark --validate
+```
+
+Turn a simple placeholder page into a publishable logo demo:
+
+```bash
+python3 scripts/build_logo_demo.py assets/demo/names.html assets/demo/logos.html
 ```
 
 ## Output Template
@@ -62,8 +79,10 @@ Use this structure in responses:
 - If licensing is unclear, explicitly mark it as "needs legal/brand review".
 - Prefer official brand resources over third-party mirrors.
 - Avoid low-quality or inconsistent logo variants unless user explicitly requests them.
+- If a product does not expose a good public SVG, state when you are using a curated fallback icon.
 
 ## Resources
 - Read `references/sources.md` for source-specific selection and licensing checks.
 - Use `scripts/logo_search.py` to discover ranked logo candidates from trusted sources.
+- Use `scripts/build_logo_demo.py` for placeholder-to-logo demo pages with downloaded local assets.
 - Use `scripts/check_svg.py` to inspect SVG metadata quickly before recommending an asset.

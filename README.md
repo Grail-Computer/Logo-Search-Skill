@@ -18,6 +18,12 @@ This skill helps teams avoid the common logo workflow pain points:
 npx skills add Grail-Computer/Logo-Search-Skill
 ```
 
+Non-interactive install for a specific agent:
+
+```bash
+npx skills add Grail-Computer/Logo-Search-Skill --agent codex --yes
+```
+
 You can also install from the full URL:
 
 ```bash
@@ -38,11 +44,32 @@ Run with SVG validation for the top recommendation:
 python3 scripts/logo_search.py OpenAI Anthropic --validate
 ```
 
+Prefer wordmarks when you are replacing visible text in a page:
+
+```bash
+python3 scripts/logo_search.py OpenAI Anthropic Cursor --prefer wordmark --validate
+```
+
 JSON output mode:
 
 ```bash
 python3 scripts/logo_search.py OpenAI Anthropic --validate --json
 ```
+
+## Demo Workflow
+
+The repo includes a simple before-state page at `assets/demo/names.html`. It uses `data-logo-brand` placeholders that
+can be converted into a static, publishable logo page with downloaded local assets:
+
+```bash
+python3 scripts/build_logo_demo.py assets/demo/names.html assets/demo/logos.html
+```
+
+This gives you a clean demo-video flow:
+- open `assets/demo/names.html`
+- run the transform
+- open `assets/demo/logos.html`
+- publish the generated page anywhere static
 
 ## What you get
 
@@ -52,6 +79,7 @@ For each brand, the skill returns:
 - Source ranking
 - Official/brand-reference URLs when available
 - SVG metadata checks (when `--validate` is enabled)
+- Notes when a curated product-icon fallback is used
 
 ## Skill Workflow
 
@@ -65,8 +93,10 @@ For each brand, the skill returns:
 - `SKILL.md` - Skill behavior and usage guidance
 - `agents/openai.yaml` - UI metadata for skill tooling
 - `scripts/logo_search.py` - Runnable logo discovery + ranking tool
+- `scripts/build_logo_demo.py` - Placeholder-to-logo demo page generator
 - `scripts/check_svg.py` - SVG metadata checker
 - `references/sources.md` - Source and licensing guidance
+- `assets/demo/names.html` - Before-state demo page for video capture
 
 ## Example Output
 
