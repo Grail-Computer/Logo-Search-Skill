@@ -1,0 +1,13 @@
+# Demo video pipeline and generated artifacts
+assets/demo/video-pipeline/
+assets/demo/logos/
+assets/demo/logos.html
+assets/demo/demo.mp4
+assets/demo/names.html
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
