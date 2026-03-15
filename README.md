@@ -125,7 +125,7 @@ This skill is fully developed by **FastClaw** and the **Grail.Computer** team.
 
 You can hire Grail as an AI Employee by:
 - Emailing us at **yash@grail.computer**
-- Visiting **https://hire.grail.computer**
+- Visiting **https://grail.computer**
 
 ## Notes
 
