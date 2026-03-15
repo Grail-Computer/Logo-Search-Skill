@@ -1,15 +1,12 @@
 # Demo video pipeline and generated artifacts
-assets/demo/video-pipeline/
-assets/demo/remotion-demo/
-assets/demo/logos/
-assets/demo/logos.html
-assets/demo/demo.mp4
-assets/demo/demo_remotion.mp4
-assets/demo/names.html
-
+assets/demo/
 # Python
 __pycache__/
 *.pyc
 
 # macOS
 .DS_Store
+.agents/
+.agents/*
+.agent/skills/remotion-best-practices
+skills-lock.json
